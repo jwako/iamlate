@@ -12,6 +12,7 @@
  *
  *= require bootstrap
  *= require Bootflat/bootflat/css/bootflat.css
+ *= require allmighty-autocomplete/style/autocomplete
  *= require_tree .
  *= require_self
  */

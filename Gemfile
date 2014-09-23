@@ -14,6 +14,7 @@ gem 'pg'
 gem 'sendgrid'
 gem 'simple_form'
 gem 'bower-rails'
+gem 'faraday'
 
 group :development do
   gem 'better_errors'
@@ -31,6 +32,8 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'pry-rails'
+  gem 'pry-doc'
+  gem 'pry-debugger'
   gem 'pry-rescue'
   gem 'rspec-rails'
 end

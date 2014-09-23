@@ -19,4 +19,10 @@
 //= require Bootflat/bootflat/js/icheck.min.js
 //= require Bootflat/bootflat/js/jquery.fs.selecter.min.js
 //= require Bootflat/bootflat/js/jquery.fs.stepper.min.js
+//= require allmighty-autocomplete/script/autocomplete
+//= require allmighty-autocomplete/script/app
+//= require angular_app.js
+//= require_directory ./controllers
+//= require_directory ./services
+//= require_directory ./directives
 //= require_tree .

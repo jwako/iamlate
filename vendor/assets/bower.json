@@ -4,6 +4,7 @@
     "angular": "latest",
     "angular-bootstrap": "latest",
     "bootstrap": "latest",
-    "Bootflat": "latest"
+    "Bootflat": "latest",
+    "allmighty-autocomplete": "latest"
   }
 }

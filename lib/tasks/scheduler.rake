@@ -18,12 +18,13 @@ namespace :scheduler do
       client = Iamlate::API.new
       infos = client.getTrainInfo
       infos.each do |info|
-        if info["odpt:trainInformationText"] != "現在、平常どおり運転しています"
+        if info["odpt:trainInformationText"] != AS_PER_USUAL_MESSAGE
           railway = Notification::RAILWAY[Notification::RAILWAY_CODE[info["odpt:railway"]]]
-          notifications = Notification.only_active.where(railway: railway)
-          notifications.each do |notification|
-            # TODO send email
-            logger.info notification.email
+          current = DateTime.iso8601(info["dc:date"]).strftime("%H:%M:%S")
+          notifications = Notification.only_active.where(railway: railway).where("start_at <= ? AND end_at >= ?", current, current)
+          notifications.each do |n|
+            Users::Mailer.notify_delay(n, info["odpt:trainInformationText"]).deliver
+            logger.info n.email
           end
         end
       end

@@ -15,6 +15,7 @@ gem 'sendgrid'
 gem 'simple_form'
 gem 'bower-rails'
 gem 'faraday'
+gem 'devise'
 
 group :development do
   gem 'better_errors'
@@ -36,6 +37,7 @@ group :development, :test do
   gem 'pry-debugger'
   gem 'pry-rescue'
   gem 'rspec-rails'
+  gem 'letter_opener'
 end
 group :production do
   gem 'unicorn'

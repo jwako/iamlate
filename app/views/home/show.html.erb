@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-md-6 box-dropdown">
+    <h2 class="box-title">Notifications</h2>
+    <%= simple_form_for @notification, url: home_path do |f| %>
+      <%= render "common/error", object: @notification %>
+      <%= f.input :email %>
+      <%= f.input :railway, as: :select, collection: Notification::RAILWAY, prompt: "路線を選択してください", required: true %>
+      <%= f.input :start_at, as: :string, input_html: { class: "time" } %>
+      <%= f.input :end_at, as: :string, input_html: { class: "time" } %>
+      <%= f.button :submit %>
+    <% end %>
+  </div>
+</div>

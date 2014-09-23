@@ -36,12 +36,9 @@ module Iamlate
         hash_thus_far.merge(param_key.to_sym => param_value.to_s)
       end
       query["acl:consumerKey"] = @opts[:consumer_key]
-
       endpoint << '?' + query.map { |k, v| "#{k}=#{urlencode(v)}" }.join('&')
-
       uri = "/api/v#{@opts[:api_version]}/" + endpoint
-
-      conn = Faraday.new(:url => 'https://' + @api_host) do |faraday|
+      conn = Faraday.new(url: @api_host) do |faraday|
         faraday.request  :url_encoded
         faraday.response :logger
         faraday.adapter  Faraday.default_adapter

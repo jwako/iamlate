@@ -25,4 +25,9 @@
 //= require_directory ./controllers
 //= require_directory ./services
 //= require_directory ./directives
+//= require jquery-ui/jquery-ui.js
+//= require jquery-ui/ui/i18n/datepicker-ja.js
+//= require jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.js
+//= require jqueryui-timepicker-addon/dist/jquery-ui-sliderAccess.js
+//= require jqueryui-timepicker-addon/dist/i18n/jquery-ui-timepicker-ja.js
 //= require_tree .

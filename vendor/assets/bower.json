@@ -5,6 +5,8 @@
     "angular-bootstrap": "latest",
     "bootstrap": "latest",
     "Bootflat": "latest",
-    "allmighty-autocomplete": "latest"
+    "allmighty-autocomplete": "latest",
+    "jquery-ui": "1.11.1",
+    "jqueryui-timepicker-addon": "1.4.6"
   }
 }

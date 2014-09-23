@@ -13,6 +13,8 @@
  *= require bootstrap
  *= require Bootflat/bootflat/css/bootflat.css
  *= require allmighty-autocomplete/style/autocomplete
+ *= require jquery-ui/themes/cupertino/jquery-ui.css
+ *= require jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.css
  *= require_tree .
  *= require_self
  */

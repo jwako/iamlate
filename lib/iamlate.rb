@@ -6,7 +6,7 @@ module Iamlate
   module Config
     # API url endpoints; replace the version at function call time to
     # allow for function-by-function differences in versioning.
-    API_HOST = 'api.tokyometroapp.jp'
+    API_HOST = 'https://api.tokyometroapp.jp'
     VERSION = '0.0.1'
   end
 end

@@ -12,10 +12,10 @@ module Iamlate
     # Options:
     # <tt>opts</tt> - A hash containing the api key, the api secret key, the API version (defaults to 1), whether to use
     # the sandbox API, and an optional custom user agent to send.
-    def initialize(opts)
+    def initialize(opts={})
       # Consider this an example of the object you need to pass.
       @opts = {
-        :consumer_key => 'your_access_key',
+        :consumer_key => ENV['TOKYOMETRO_ACCESS_TOKEN'],
         :api_version => '2'
       }.merge(opts)
 

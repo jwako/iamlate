@@ -23,8 +23,13 @@ namespace :scheduler do
           current = DateTime.iso8601(info["dc:date"]).strftime("%H:%M:%S")
           notifications = Notification.only_active.where(railway: railway).where("start_at <= ? AND end_at >= ?", current, current)
           notifications.each do |n|
-            Users::Mailer.notify_delay(n, info["odpt:trainInformationText"]).deliver
-            logger.info n.email
+            _status_ = info["odpt:trainInformationStatus"]
+            _history_ = n.histories.find_or_initialize_by(user: n.user, title: _status_)
+            unless _history_.persisted?
+              Users::Mailer.notify_delay(n, Notification::RAILWAY_CODE[info["odpt:railway"]], _status_, info["odpt:trainInformationText"]).deliver
+              _history_.save!
+              logger.info n.email
+            end
           end
         end
       end

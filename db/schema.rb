@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140923072427) do
+ActiveRecord::Schema.define(version: 20140929024802) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "notification_histories", force: true do |t|
+    t.integer  "notification_id"
+    t.integer  "user_id"
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "notification_histories", ["notification_id"], name: "index_notification_histories_on_notification_id", using: :btree
+  add_index "notification_histories", ["user_id"], name: "index_notification_histories_on_user_id", using: :btree
 
   create_table "notifications", force: true do |t|
     t.string   "email"

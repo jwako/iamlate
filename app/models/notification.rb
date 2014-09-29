@@ -1,5 +1,7 @@
 class Notification < ActiveRecord::Base
   belongs_to :user
+  has_many :histories, class_name: "NotificationHistory", foreign_key: "notification_id", dependent: :destroy
+  # has_many :notification_histories
 
   RAILWAY = { "丸ノ内線" => 100, 
     "日比谷線" => 200, 

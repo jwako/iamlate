@@ -1,5 +1,6 @@
 require "iamlate/api_handler"
 require "iamlate/exception"
+require "iamlate/token_resource"
 
 module Iamlate
   # Store global config objects here - e.g, urls, etc.

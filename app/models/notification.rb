@@ -3,6 +3,8 @@ class Notification < ActiveRecord::Base
   has_many :histories, class_name: "NotificationHistory", foreign_key: "notification_id", dependent: :destroy
   # has_many :notification_histories
 
+  token_access :token
+
   RAILWAY = { "丸ノ内線" => 100, 
     "日比谷線" => 200, 
     "東西線" => 300, 
@@ -28,18 +30,12 @@ class Notification < ActiveRecord::Base
 
   validates :email, :railway, :start_at, :end_at, presence: true
 
-  before_create :setup_token
   after_create :notify_user
 
   private
 
-  def setup_token
-    # TODO set token
-    self.token = "HOGEHOGE"
-  end
-
   def notify_user
-    # TODO send email to the user
+    Users::Mailer.notify_confirmations(email, self).deliver
   end
 
 end

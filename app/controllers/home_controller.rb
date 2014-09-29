@@ -11,6 +11,7 @@ class HomeController < ApplicationController
     if @notification.save
       redirect_to :home, notice: "正しく登録されました。"
     else
+      @notifications = current_user.notifications.only_persisted
       render :show
     end
   end

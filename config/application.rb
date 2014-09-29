@@ -34,5 +34,8 @@ module Iamlate
 
     config.autoload_paths += %W(#{config.root}/lib)
 
+    # Add assets path for fonts
+    config.assets.paths << Rails.root.join('vendor', 'assets', 'components-font-awesome', 'fonts')
+
   end
 end

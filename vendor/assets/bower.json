@@ -7,6 +7,7 @@
     "Bootflat": "latest",
     "allmighty-autocomplete": "latest",
     "jquery-ui": "1.11.1",
-    "jqueryui-timepicker-addon": "1.4.6"
+    "jqueryui-timepicker-addon": "1.4.6",
+    "components-font-awesome": "4.1.0"
   }
 }

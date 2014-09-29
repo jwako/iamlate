@@ -1,4 +1,26 @@
 <div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <h3 class="panel-title">遅延通知登録</h3>
+      </div>
+      <div class="panel-body">
+        <%= simple_form_for @notification, url: home_path do |f| %>
+          <%= render "common/error", object: @notification %>
+          <%= f.input :email %>
+          <%= f.input :railway, as: :select, collection: Notification::RAILWAY, prompt: "路線を選択してください", required: true %>
+          <%= f.input :start_at, as: :string, input_html: { class: "time" } %>
+          <%= f.input :end_at, as: :string, input_html: { class: "time" } %>
+          <%= f.button :submit %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<div class="row">
 <div class="col-md-12">
   <div class="panel panel-default">
     <div class="panel-heading">登録している通知一覧</div>
@@ -19,25 +41,11 @@
           <td><%= Notification::RAILWAY.invert[n.railway] %></td>
           <td><%= n.start_at.strftime("%H:%M") %></td>
           <td><%= n.end_at.strftime("%H:%M") %></td>
-          <td><%= n.active %></td>
+          <td><%= satus_label(n.active) %></td>
         </tr>
         <% end %>
       </tbody>
     </table>
   </div>
 </div>
-</div>
-
-<div class="row">
-  <div class="col-md-6 box-dropdown">
-    <h2 class="box-title">Notifications</h2>
-    <%= simple_form_for @notification, url: home_path do |f| %>
-      <%= render "common/error", object: @notification %>
-      <%= f.input :email %>
-      <%= f.input :railway, as: :select, collection: Notification::RAILWAY, prompt: "路線を選択してください", required: true %>
-      <%= f.input :start_at, as: :string, input_html: { class: "time" } %>
-      <%= f.input :end_at, as: :string, input_html: { class: "time" } %>
-      <%= f.button :submit %>
-    <% end %>
-  </div>
 </div>

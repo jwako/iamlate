@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require bootstrap
+ *= require components-font-awesome/css/font-awesome.css
  *= require Bootflat/bootflat/css/bootflat.css
  *= require allmighty-autocomplete/style/autocomplete
  *= require jquery-ui/themes/cupertino/jquery-ui.css

@@ -8,6 +8,10 @@ ja:
       # You can uncomment the line below if you need to overwrite the whole required html.
       # When using html, text and mark won't be used.
       # html: '<abbr title="required">*</abbr>'
-
+    placeholders:
+      notification:
+        email: "sample@example.net"
+        start_at: "通知開始時間"
+        end_at: "通知終了時間"
 
 

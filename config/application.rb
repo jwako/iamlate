@@ -33,5 +33,6 @@ module Iamlate
     config.i18n.default_locale = :ja
 
     config.autoload_paths += %W(#{config.root}/lib)
+
   end
 end

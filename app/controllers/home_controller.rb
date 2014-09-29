@@ -2,8 +2,8 @@ class HomeController < ApplicationController
   before_filter :authenticate_user!
 
   def show
-    @notifications = current_user.notifications
     @notification = current_user.notifications.new
+    @notifications = current_user.notifications.only_persisted
   end
 
   def create
